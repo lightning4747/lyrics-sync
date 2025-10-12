@@ -407,7 +407,7 @@ app.listen(PORT, () => {
   console.log('✅ Server is ready for file uploads');
 });
 
-// Add this route to your existing server.js
+
 app.get('/player', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'player.html'));
 });
