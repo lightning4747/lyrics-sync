@@ -1,0 +1,14 @@
+{
+  "name": "lyrics-sync-app",
+  "version": "1.0.0",
+  "description": "Karaoke-style lyrics synchronization with audio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.18.2",
+    "multer": "~2.0.2"
+  }
+}

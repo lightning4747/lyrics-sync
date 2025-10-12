@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Lyrics Sync</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+15&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Karaoke Lyrics Sync 🎤</h1>
+            <p>Upload your song and lyrics to create a synchronized karaoke experience</p>
+        </header>
+
+        <div class="upload-section">
+            <h2>Upload Files</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="file-input-group">
+                    <label for="audioFile">Audio File (MP3, WAV, etc.):</label>
+                    <input type="file" id="audioFile" name="audio" accept="audio/*" required>
+                </div>
+                
+                <div class="file-input-group">
+                    <label for="lyricsFile">Lyrics File (TXT or LRC format):</label>
+                    <input type="file" id="lyricsFile" name="lyrics" accept=".txt,.lrc" required>
+                    <small>Format: [mm:ss.xx] Lyrics or timestamp Lyrics</small>
+                </div>
+                
+                <button type="submit" id="uploadBtn">Process Files</button>
+            </form>
+        </div>
+
+        <div class="player-section" id="playerSection" style="display: none;">
+            <h2>Now Playing</h2>
+            <div class="audio-controls">
+                <audio id="audioPlayer" controls></audio>
+                <button id="playBtn" class="control-btn">▶ Play</button>
+                <button id="pauseBtn" class="control-btn">⏸ Pause</button>
+                <button id="restartBtn" class="control-btn">⏮ Restart</button>
+            </div>
+            
+            <div class="visualizer">
+                <canvas id="visualizerCanvas"></canvas>
+            </div>
+            
+            <div class="lyrics-container">
+                <div id="lyricsDisplay" class="lyrics-text"></div>
+            </div>
+            
+            <div class="current-time" id="currentTime">00:00</div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ol>
+                <li>Upload an audio file and a lyrics file</li>
+                <li>Lyrics file should be in LRC format: [mm:ss.xx] Lyrics</li>
+                <li>Or simple format: timestamp Lyrics (e.g., 10.5 Hello world)</li>
+                <li>Click Play to start synchronized playback</li>
+                <li>Background changes based on lyrics presence</li>
+                <li>Text scales with audio amplitude</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
